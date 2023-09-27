@@ -1,10 +1,20 @@
 import '../styles/main.scss';
-// import '@styles/03-generic/generic.fonts.scss';
-// import '@styles/03-generic/generic.icons.scss';
-
+import '@radix-ui/themes/styles.css';
 import type { AppProps } from 'next/app';
+import { Theme } from '@radix-ui/themes';
 
 export default function App({ Component, pageProps }: AppProps) {
   // eslint-disable-next-line react/jsx-props-no-spreading
-  return <Component {...pageProps} />;
+  return (
+    <Theme
+      appearance='dark'
+      accentColor='cyan'
+      grayColor='gray'
+      panelBackground='solid'
+      scaling='100%'
+      radius='full'
+    >
+      <Component {...pageProps} />
+    </Theme>
+  );
 }

@@ -10,6 +10,8 @@
     "sass:watch": "sass --watch ./src/styles/main.scss ./src/styles/main.css"
   },
   "dependencies": {
+    "@iconscout/react-unicons": "^2.0.2",
+    "@radix-ui/themes": "^1.1.2",
     "axios-mock-adapter": "^1.22.0",
     "http-errors": "^2.0.0",
     "next": "13.5.3",
@@ -22,6 +24,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
+    "css-loader": "^6.7.3",
     "eslint": "8.50.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.1.0",
@@ -30,7 +33,6 @@
     "lint-staged": "^14.0.1",
     "prettier": "^3.0.3",
     "sass": "^1.68.0",
-    "css-loader": "^6.7.3",
     "sass-loader": "^10.2.0",
     "style-loader": "^3.3.1"
   },
