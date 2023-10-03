@@ -1,11 +1,18 @@
-import Box from '@components/box/Box';
-import Card from '@components/card/CustomCard';
+import service from '@api';
+import Props from '@lib/types/pages/home';
+import Events, { useEventActions } from '@modules/event';
 import Head from 'next/head';
-import Image from 'next/image';
 import Header from 'src/layout/header/Header';
-// import styles from '../styles/Home.module.css'
 
-export default function Home() {
+export default function Home(props: Props) {
+  // console.log('props', props);
+
+  const eventActions = useEventActions();
+
+  eventActions.setPrev(props.prev);
+
+  eventActions.setUpcoming(props.upcoming);
+
   return (
     <>
       <Head>
@@ -18,26 +25,14 @@ export default function Home() {
       <div className='o-container'>
         <Header title='Hi, Ishita' />
 
-        <Box
-          title='No upcoming house party'
-          subtitle='Plan your house party'
-          button={{
-            text: 'CREATE A NEW EVENT',
-            onClick: () => {},
-            size: 'lg',
-          }}
-        />
-
-        <div className='o-row mt-8'>
-          <div className='o-col-xxs-6 o-col-sm-8'>
-            <Card title='Dan birthday' time='8:00 PM' date='12/2/2022' />
-          </div>
-
-          <div className='o-col-xxs-6 o-col-sm-8'>
-            <Card title='Shiva anniversary' time='8:00 PM' date='12/2/2022' />
-          </div>
-        </div>
+        <Events upcoming={props.upcoming} prev={props.prev} />
       </div>
     </>
   );
+}
+
+export async function getServerSideProps() {
+  const response = await service.get<{ data: any }>('/events');
+
+  return { props: { ...response.data } };
 }

@@ -6,9 +6,9 @@ function Box(props: Props) {
   return (
     <div className={styles['c-box']}>
       <div className='c-box__wrapper'>
-        <h5 className={styles['c-box__title']}>{props.title}</h5>
+        <p className={styles['c-box__title']}>{props.title}</p>
 
-        {props.subtitle ? <h6 className={styles['c-box__subtitle']}>{props.subtitle}</h6> : null}
+        {props.subtitle ? <p className={styles['c-box__subtitle']}>{props.subtitle}</p> : null}
 
         <Button onClick={props.button.onClick} type='button'>
           {props.button.text}

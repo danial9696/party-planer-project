@@ -1,29 +1,13 @@
-export interface EventCreatorModel {
+interface EventModel {
   title: string;
-  type: 'form' | 'box' | 'options';
-  data: { title: string; detail?: string }[];
+  detail?: string;
+  time: string;
+  date: string;
 }
 
-const config: EventCreatorModel[] = [
-  {
-    title: 'Whats the occasion ?',
-    type: 'box',
-    data: [
-      {
-        title: 'Birthday',
-      },
-      {
-        title: 'Anniversary',
-      },
-      {
-        title: 'Dinner',
-      },
-      {
-        title: 'Meetup',
-      },
-      {
-        title: 'Others',
-      },
-    ],
-  },
-];
+export interface UpcomingEventModel extends EventModel {
+  todo: number;
+  done: number;
+}
+
+export interface PrevEventModel extends EventModel {}

@@ -37,6 +37,8 @@
       "@styles/*": ["./src/styles/scss/*"],
       "@components": ["./src/components"],
       "@components/*": ["./src/components/*"],
+      "@modules": ["./src/modules"],
+      "@modules/*": ["./src/modules/*"],
       "@lib": ["./src/lib"],
       "@lib/*": ["./src/lib/*"],
       "@api": ["./src/api"],

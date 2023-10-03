@@ -5,7 +5,7 @@ import { ServiceType } from './types';
 const getBaseUrl = () => {
   if (typeof window === 'undefined') {
     // Running on the server-side
-    return 'http://192.168.1.25/';
+    return '';
   }
   // Running on the client-side
 

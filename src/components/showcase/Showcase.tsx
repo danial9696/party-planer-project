@@ -12,7 +12,7 @@ function Showcase(props: Props) {
         {props.detail}
       </Text>
 
-      <Box></Box>
+      {/* <Box></Box> */}
     </Card>
   );
 }
