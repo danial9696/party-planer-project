@@ -1,4 +1,4 @@
 import { mock } from '../mock';
-import EVENT_DATA from './data.mock';
+import { EVENTS } from './data.mock';
 
-mock.onGet('/events').reply(() => [200, EVENT_DATA]);
+mock.onGet('/events').reply(() => [200, { data: EVENTS }]);
