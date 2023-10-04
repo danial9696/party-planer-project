@@ -3,16 +3,16 @@ import Creator from './Creator';
 import useDialog from '@lib/hooks';
 import { DialogContainerProps } from './types';
 
-function DialogContainer(props: DialogContainerProps) {
+function CreatorContainer(props: DialogContainerProps) {
   const { dialogOpen, handleClose } = useDialog(props.open, props.closeHandler);
 
   return (
     <Dialog.Root open={dialogOpen}>
       <Dialog.Content>
-        <Creator model={[]} />
+        <Creator />
       </Dialog.Content>
     </Dialog.Root>
   );
 }
 
-export default DialogContainer;
+export default CreatorContainer;

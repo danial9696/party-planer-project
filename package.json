@@ -10,6 +10,7 @@
     "sass:watch": "sass --watch ./src/styles/main.scss ./src/styles/main.css"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.3.1",
     "@iconscout/react-unicons": "^2.0.2",
     "@radix-ui/themes": "^1.1.2",
     "@sentry/browser": "^7.72.0",

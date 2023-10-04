@@ -5,8 +5,8 @@ import dynamic from 'next/dynamic';
 import { useState } from 'react';
 import { usePrevEventState, useUpcomingEventState } from '../store/selector';
 
-const DialogContainer = dynamic(
-  () => import('@modules/event-creator/components/Dialog.container'),
+const CreatorContainer = dynamic(
+  () => import('@modules/event-creator/components/Creator.container'),
   {
     loading: () => <p>Loading...</p>,
   },
@@ -14,7 +14,7 @@ const DialogContainer = dynamic(
 
 /* The `Events` function is a React component that renders a section for displaying upcoming and
 previous events. */
-function Events(): JSX.Element {
+function Events() {
   const upcomingEvents = useUpcomingEventState();
   const prevEvents = usePrevEventState();
 
@@ -25,7 +25,7 @@ function Events(): JSX.Element {
 
   return (
     <div className='my-8'>
-      <DialogContainer open={open} closeHandler={() => setOpen(false)} />
+      <CreatorContainer open={open} closeHandler={() => setOpen(false)} />
 
       {noUpcoming ? (
         <Box
