@@ -1,16 +1,7 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
 import Sentry from './sentry';
 import { ServiceType } from './types';
-
-const getBaseUrl = () => {
-  if (typeof window === 'undefined') {
-    // Running on the server-side
-    return '';
-  }
-  // Running on the client-side
-
-  return '';
-};
+import { getBaseUrl } from './utils';
 
 export const apiService: AxiosInstance = axios.create({
   baseURL: getBaseUrl(),

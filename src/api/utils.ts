@@ -20,3 +20,19 @@ export function isValidationError(err: unknown): err is ZodError {
 export function isCustomError(err: unknown): err is CustomError {
   return (err as CustomError).name === 'CustomError';
 }
+
+/**
+ * The function `getBaseUrl` returns an empty string if it is running on the server-side, and also
+ * returns an empty string if it is running on the client-side.
+ * @returns The function is currently returning an empty string in both cases.
+ */
+export const getBaseUrl = () => {
+  // ! Must add baseURL for real api call
+  if (typeof window === 'undefined') {
+    // Running on the server-side
+    return '';
+  }
+  // Running on the client-side
+
+  return '';
+};
