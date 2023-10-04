@@ -13,13 +13,6 @@ export default function Home(props: Props) {
 
   return (
     <>
-      <Head>
-        <link
-          rel='stylesheet'
-          href='https://unicons.iconscout.com/release/v4.0.8/css/line.css'
-        ></link>
-      </Head>
-
       <div className='o-container'>
         <Header title='Hi, Ishita' />
 
